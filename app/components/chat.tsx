@@ -549,6 +549,7 @@ export function ChatActions(props: {
           : nextModel.name,
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chatStore, currentModel, models]);
 
   return (
