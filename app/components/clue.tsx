@@ -84,7 +84,7 @@ const Header: React.FC<{ title: string; type: RowType }> = ({
       : "";
 
   return (
-    <div className="width-full mt-[16px] border-l-4 border-cyan-600 pl-[15px] flex flex-row items-center">
+    <div className="width-full mt-[20px] border-l-4 border-cyan-600 pl-[15px] flex flex-row items-center">
       <h1 className="text-[16px] font-bold">{title}</h1>
       {/* 如果是更新方式 */}
       {(type === RowType.UPDATE ||
@@ -186,6 +186,7 @@ const RowBox: React.FC<{ type: RowType }> = ({ type }) => {
 
 const _Clue = () => {
   const store = useClueStore();
+
   return (
     <div className="p-[20px] h-screen overflow-y-auto">
       <h1 className="text-[20px] font-bold">小说大纲和其他</h1>
