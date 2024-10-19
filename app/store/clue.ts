@@ -9,6 +9,7 @@ type ClueState = {
   otherSkills: string[];
   keyPersons: string[];
   otherPersons: string[];
+  supplements: string;
 };
 
 export const DEFAULT_CLUE_STATE = {
@@ -19,6 +20,7 @@ export const DEFAULT_CLUE_STATE = {
   otherSkills: [],
   keyPersons: [],
   otherPersons: [],
+  supplements: "",
 } as ClueState;
 
 const useClueStore = createPersistStore(
@@ -85,6 +87,13 @@ const useClueStore = createPersistStore(
     setOtherPersons(otherPersons: string[]) {
       set((state) => ({ ...state, otherPersons }));
     },
+
+    getSupplements() {
+      return get().supplements;
+    },
+    setSupplememts(supplements: string) {
+      set((state) => ({ ...state, supplements }));
+    },
   }),
   {
     name: StoreKey.Clue,
@@ -110,11 +119,11 @@ const useClueStore = createPersistStore(
             return newState as any;
 
             */
-      return state;
+      return state as any;
     },
 
     onRehydrateStorage(state) {
-      //TODO,如果要做一些初始化操作可以在这里操作
+      //TODO,做一些初始化操作
     },
   },
 );

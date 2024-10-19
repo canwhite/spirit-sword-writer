@@ -252,7 +252,7 @@ export function SideBar(props: { className?: string }) {
         >
           <div className="">
             <span>小说大纲和细节完善 </span>
-            <span className={className}>{completeness}%</span>
+            <span className={className}>{completeness.toFixed(2)}%</span>
           </div>
           <div>
             <svg
